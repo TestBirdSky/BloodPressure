@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="startGreen">#5AE077</color>
+    <color name="endGreen">#408C96</color>
+
+    <color name="indicatorBg">#A7C6A0</color>
+    <color name="indicatorProgress">#29CD4D</color>
+
+
+    <color name="itemTitle">#1F2638</color>
+    <color name="itemDate">#B9BECB</color>
+    <color name="itemSubTitle">#7F8D94</color>
+
+    <color name="grayBorder">#ECEEEE</color>
+
+    <color name="styleBg1">#EFF9FF</color>
+    <color name="styleBg2">#EFFFF1</color>
+    <color name="styleBg3">#FFF9EF</color>
+    <color name="styleBg4">#FFF4F4</color>
+    <color name="styleBg5">#FFFDEF</color>
+    <color name="styleBg6">#FFF6F4</color>
+
+    <color name="deleteBtn">#FF5454</color>
+
+
+    <color name="edtBg">#F7FAF7</color>
+    <color name="edtTxt">#91A69C</color>
+
+
+    <color name="startIndicator1">#66C8FF</color>
+    <color name="endIndicator1">#BCE7FF</color>
+
+    <color name="startIndicator2">#57DF75</color>
+    <color name="endIndicator2">#DFFBCD</color>
+
+    <color name="startIndicator3">#FFDD66</color>
+    <color name="endIndicator3">#FFF4CD</color>
+
+    <color name="startIndicator4">#FFC266</color>
+    <color name="endIndicator4">#FFE8BC</color>
+
+    <color name="startIndicator5">#FCA681</color>
+    <color name="endIndicator5">#FBD8CD</color>
+
+    <color name="startIndicator6">#FF5151</color>
+    <color name="endIndicator6">#FBCDCD</color>
+
+    <color name="selectUnSelect">#DCE6EC</color>
+    <color name="selectSelect">#29CD4D</color>
+
+    <color name="unMark">#A0AAAF</color>
+</resources>

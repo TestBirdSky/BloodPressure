@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="14dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/sweetIc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/sweet_blue" />
+
+    <View
+        android:id="@+id/viewIndicator"
+        android:layout_width="16dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sweet_indicator_1" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,113 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:682604540202345726",
+      "lastPropertyId": "8:1052013234526483896",
+      "name": "PressureData",
+      "properties": [
+        {
+          "id": "1:2800571666575529952",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6283248642314215489",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "3:670625451617059070",
+          "name": "time",
+          "type": 6
+        },
+        {
+          "id": "4:8498471686435154148",
+          "name": "sys",
+          "type": 9
+        },
+        {
+          "id": "5:1862099094570657000",
+          "name": "dia",
+          "type": 9
+        },
+        {
+          "id": "6:4423394091212435317",
+          "name": "pul",
+          "type": 9
+        },
+        {
+          "id": "7:5755065874560859440",
+          "name": "note",
+          "type": 9
+        },
+        {
+          "id": "8:1052013234526483896",
+          "name": "mark",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:8229720758812750547",
+      "lastPropertyId": "8:4897595849351639258",
+      "name": "SweetData",
+      "properties": [
+        {
+          "id": "1:8050334881569958909",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:67264118579950334",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "3:1013339500861049597",
+          "name": "time",
+          "type": 6
+        },
+        {
+          "id": "4:747228780042154195",
+          "name": "dataMg",
+          "type": 9
+        },
+        {
+          "id": "5:970935749861239939",
+          "name": "dataMMol",
+          "type": 9
+        },
+        {
+          "id": "7:8418497709065750995",
+          "name": "note",
+          "type": 9
+        },
+        {
+          "id": "8:4897595849351639258",
+          "name": "mark",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:8229720758812750547",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    7941769813937771415
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

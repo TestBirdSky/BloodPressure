@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pressureCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/item_white_bg"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="14dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/stateLogo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@mipmap/pressure1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="NormalNormalNormalNormalNormalNormalNormalNormal"
+        android:textColor="@color/itemTitle"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editImg"
+        app:layout_constraintStart_toEndOf="@+id/stateLogo"
+        app:layout_constraintTop_toTopOf="@+id/stateLogo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        android:text="2023-08-04"
+        android:textColor="@color/itemDate"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editImg"
+        app:layout_constraintStart_toEndOf="@+id/stateLogo"
+        app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/editImg"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@mipmap/editpen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/copyImg"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="3dp"
+        android:src="@mipmap/copybtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editImg" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/cardDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/item_bg_1"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/stateLogo">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="3.5dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/keyTxt1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sys"
+                android:textColor="@color/itemSubTitle"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valueTxt1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="127"
+                android:textColor="@color/itemTitle"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="3.5dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/keyTxt2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Dia"
+                android:textColor="@color/itemSubTitle"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valueTxt2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="86"
+                android:textColor="@color/itemTitle"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="3.5dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/keyTxt3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Pul"
+                android:textColor="@color/itemSubTitle"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/valueTxt3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="92"
+                android:textColor="@color/itemTitle"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

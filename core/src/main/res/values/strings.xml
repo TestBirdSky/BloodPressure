@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tell">Telegram</string>
+    <string name="applovin">\t</string>
+    <string name="fbid">123123</string> <!-- // TODO fb id -->
+</resources>

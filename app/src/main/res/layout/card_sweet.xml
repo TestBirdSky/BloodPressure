@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardSweet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/item_white_bg"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="14dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/stateLogo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@mipmap/sweet_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="Normal"
+        android:textColor="@color/itemTitle"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editImg"
+        app:layout_constraintStart_toEndOf="@+id/stateLogo"
+        app:layout_constraintTop_toTopOf="@+id/stateLogo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="4dp"
+        android:text="2023-08-04"
+        android:textColor="@color/itemDate"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editImg"
+        app:layout_constraintStart_toEndOf="@+id/stateLogo"
+        app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/editImg"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@mipmap/editpen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/copyImg"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="3dp"
+        android:src="@mipmap/copybtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editImg" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/cardMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/item_bg_1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/stateLogo">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sweetTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="85 mg/dl"
+            android:textColor="@color/itemTitle"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/markState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/sweet_btn_bg1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="Before Meals"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

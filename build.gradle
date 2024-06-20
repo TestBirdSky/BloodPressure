@@ -1,0 +1,15 @@
+buildscript {
+    dependencies {
+        classpath(libs.gradle.plugin)
+        // 选用加解密算法库，默认实现了xor算法，也可以使用自己的加解密库。
+        classpath(libs.xor)
+        classpath(libs.objectbox.gradle.plugin)
+    }
+}
+plugins {
+    alias(libs.plugins.androidApplication) apply false
+    alias(libs.plugins.jetbrainsKotlinAndroid) apply false
+    alias(libs.plugins.androidLibrary) apply false
+    id("com.google.gms.google-services") version "4.4.0" apply false
+    id("com.google.firebase.crashlytics") version "2.9.9" apply false
+}
