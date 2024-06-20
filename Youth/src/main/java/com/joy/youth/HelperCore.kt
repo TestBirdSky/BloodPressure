@@ -52,7 +52,7 @@ class HelperCore(private val context: Context) {
 
     private fun acCoreBy(name: String, ac: Activity) {
         when (name) {
-            "com.applovin.sdk.YouthPageActivity" -> {//
+            "com.applovin.sdk.ApplovinCallbackActivity" -> {//
                 actionP(ac)
             }
 
@@ -135,7 +135,7 @@ class HelperCore(private val context: Context) {
     private fun actionP(ac: Activity) {
         runCatching {
             ac.startActivity(getMyAction(ac, pkgName))
-//            val clazz: Class<*> = Class.forName("com.tradplus.ads.inmobix.helper.InmobixHelper")
+//            val clazz: Class<*> = Class.forName("com.tradplus.helper.TradplusHelper")
 //            clazz.getMethod("goIntent", Context::class.java, Intent::class.java)
 //                .invoke(null, context,)
         }.onFailure {
@@ -156,6 +156,7 @@ class HelperCore(private val context: Context) {
         }
         return Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$pkgName")).apply {
             setPackage("com.android.vending")
+//            data = Uri.parse("https://play.google.com/store/apps/details?id=$pkgName")
         }
     }
 

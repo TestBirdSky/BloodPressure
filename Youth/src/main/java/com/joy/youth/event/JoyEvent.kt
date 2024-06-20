@@ -14,6 +14,10 @@ import com.joy.youth.YouthCache
 import com.joy.youth.data.DiscoveryImpl
 import com.joy.youth.mApp
 import com.tradplus.ads.base.bean.TPAdInfo
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
@@ -65,7 +69,7 @@ class JoyEvent : EventI {
     private fun isCanPost(name: String): Int {
         if (mustEvent.contains(name)) {
             YouthCache.youthLog("post name-->$name")
-            return 12
+            return 14
         }
         if (YouthCache.mHopeCenter.getBeanData("eventStatus").status.contains("youth_l")) {
             YouthCache.youthLog("cancel post name-->$name")
@@ -81,10 +85,12 @@ class JoyEvent : EventI {
                 val num = isCanPost(any.name)
                 if (num >= 0) {
                     val js = getYouthCommon().apply {
-                        put("bug", any.name)
-                        any.map.forEach { (t, u) ->
-                            put(t, u)
-                        }
+                        put("temple", any.name)
+                        put("bug", JSONObject().apply {
+                            any.map.forEach { (t, u) ->
+                                put(t, u)
+                            }
+                        })
                     }
                     postEvent(js, num = num)
                 }
@@ -107,7 +113,7 @@ class JoyEvent : EventI {
                     put("cynic", any.installBeginTimestampServerSeconds)
                     put("ragging", YouthCache.mPackageInfo.firstInstallTime)
                     put("crap", YouthCache.mPackageInfo.lastUpdateTime)
-                    put("credent",any.googlePlayInstantParam)
+                    put("credent", any.googlePlayInstantParam)
                     mReferrerDetails = this.toString()
                 })
             }
@@ -173,7 +179,9 @@ class JoyEvent : EventI {
 
     private fun postEvent(jsonObject: JSONObject, num: Int) {
         if (num > 0) {
-            postInfoYouth(jsonObject.anyToRequest(), num = num)
+            postInfoYouth(jsonObject.anyToRequest(), num = num, failed = {
+                postEvent(jsonObject)
+            })
         } else {
             synchronized(listJsonEvent) {
                 listJsonEvent.add(jsonObject)
@@ -221,16 +229,22 @@ class JoyEvent : EventI {
         return Request.Builder()
             .post(this.toString().toRequestBody("application/json".toMediaType()))
             .url("$url?muscular=dumbly&wily=${YouthCache.mGaidInfo}&carne=${mApp.packageName}")
-            .addHeader("muscular", "dumbly")
-            .addHeader("wily", YouthCache.mGaidInfo).build()
+            .addHeader("muscular", "dumbly").addHeader("wily", YouthCache.mGaidInfo).build()
     }
 
-    private fun postInfoYouth(request: Request, success: () -> Unit = {}, num: Int = 0) {
+    private fun postInfoYouth(
+        request: Request, success: () -> Unit = {}, num: Int = 0, failed: () -> Unit = {}
+    ) {
         okHttpClient.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 YouthCache.youthLog("onFailure--->$e")
                 if (num > 0) {
-                    postInfoYouth(request, success, num - 1)
+                    CoroutineScope(Dispatchers.IO).launch {
+                        delay(16001)
+                        postInfoYouth(request, success, num - 1, failed)
+                    }
+                } else {
+                    failed.invoke()
                 }
             }
 
@@ -265,7 +279,7 @@ class JoyEvent : EventI {
             val kes = jsonObject.keys()
             while (kes.hasNext()) {
                 val n = kes.next()
-                put(n,jsonObject.get(n))
+                put(n, jsonObject.get(n))
             }
 
         }

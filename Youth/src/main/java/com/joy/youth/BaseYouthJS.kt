@@ -15,6 +15,7 @@ import android.content.Intent
 abstract class BaseYouthJS : JobService() {
 
     override fun onStartJob(params: JobParameters?): Boolean {
+        YouthCache.youthLog("onStartJob--->$params")
         if (YouthCache.isInAllow.not()) {
             val pb = params?.extras
             val name = pb?.getString("z")

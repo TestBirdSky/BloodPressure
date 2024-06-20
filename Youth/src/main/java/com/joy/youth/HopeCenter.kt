@@ -164,7 +164,11 @@ class HopeCenter(val context: Application = mApp) : YouthData {
 
     var loadSuccessEvent: (() -> Unit)? = null
 
-    fun resetShowFailed() {
+    private fun resetShowFailed() {
         mYouthIdentity.lastTimeS = 0L
+    }
+
+    fun getAdid(): String {
+        return mFirebaseYouth.mYouthAdId
     }
 }

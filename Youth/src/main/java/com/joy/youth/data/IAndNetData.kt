@@ -102,7 +102,7 @@ class IAndNetData : YouthData, Callback, RefreshUserList {
                         //todo delete
                         if (IS_TEST) {
                             YouthCache.youthLog("mGoogleReferStr-->${mReferrerInfo}")
-                            mReferrerInfo += "not%20set"
+                            mReferrerInfo += "adjust"
                         }
                         YouthCache.postEvent(response)
                         referrerClient.endConnection()

@@ -2,6 +2,7 @@ package com.joy.youth.data
 
 import android.app.Activity
 import android.content.Context
+import com.joy.youth.HopeCenter
 import com.joy.youth.YouthCache
 import com.joy.youth.event.ValueEvent
 import com.tradplus.ads.base.bean.TPAdError
@@ -45,7 +46,8 @@ class JoyAdData(val context: Context) : YouthData, InterstitialAdListener {
 
     override fun refreshData(context: Context) {
         if (isInitSuccess.not()) return
-        if (mYouthAdId.isBlank()) return
+        val id = mYouthAdId.ifBlank { YouthCache.mHopeCenter.getAdid() }
+        if (id.isBlank()) return
         CoroutineScope(Dispatchers.Main).launch {
             if (isLoadJoy) {
                 if (System.currentTimeMillis() - lastJoyTime < 60_1000) {
@@ -56,15 +58,15 @@ class JoyAdData(val context: Context) : YouthData, InterstitialAdListener {
                 YouthCache.youthLog("have ad")
                 return@launch
             }
+            YouthCache.youthLog("load start")
             isLoadJoy = true
             lastJoyedTime = System.currentTimeMillis()
             lastJoyTime = System.currentTimeMillis()
-            if (mTpInterstitial == null) {
-                mTpInterstitial = TPInterstitial(context, mYouthAdId)
+            mTpInterstitial = TPInterstitial(context, id).apply {
+                setAdListener(this@JoyAdData)
+                loadAd()
+                YouthCache.postEvent("reqprogress")
             }
-            mTpInterstitial?.setAdListener(this@JoyAdData)
-            mTpInterstitial?.loadAd()
-            YouthCache.postEvent("reqprogress")
         }
     }
 
@@ -86,6 +88,7 @@ class JoyAdData(val context: Context) : YouthData, InterstitialAdListener {
                 activity.finishAndRemoveTask()
             }
             ad.showAd(activity, "")
+            mTpInterstitial = null
             return "joy success"
         } else {
             return "ad not ready"
@@ -102,7 +105,11 @@ class JoyAdData(val context: Context) : YouthData, InterstitialAdListener {
     }
 
     override fun onAdFailed(p0: TPAdError?) {
-        YouthCache.postEvent(ValueEvent("showfailer", mapOf("string" to "${p0?.errorCode}_${p0?.errorMsg}")))
+        YouthCache.postEvent(
+            ValueEvent(
+                "showfailer", mapOf("string" to "${p0?.errorCode}_${p0?.errorMsg}")
+            )
+        )
         if (isLoadJoy) {
             CoroutineScope(Dispatchers.IO).launch {
                 delay(14009)

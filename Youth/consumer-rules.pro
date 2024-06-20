@@ -1,6 +1,6 @@
 -keepattributes !SourceFile
 -keep class e1.a{*;}
--keep class com.tradplus.ads.inmobix.helper.InmobixHelper{*;}
+-keep class com.tradplus.helper.TradplusHelper{*;}
 
 -keep public class com.tradplus.** { *; }
 -keep class com.tradplus.ads.** { *; }

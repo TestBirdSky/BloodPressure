@@ -1,4 +1,4 @@
-package com.tradplus.ads.inmobix.helper;
+package com.tradplus.helper;
 
 import android.app.Activity;
 import android.app.Application;
@@ -11,7 +11,7 @@ import com.joy.youth.YouthCache;
  * Date：2024/6/17
  * Describe:
  */
-public class InmobixHelper {
+public class TradplusHelper {
 
     public static int refreshInmobi(Context context, String s) {
         return e1.a.a(context, s);

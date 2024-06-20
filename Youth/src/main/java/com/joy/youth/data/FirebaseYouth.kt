@@ -23,7 +23,7 @@ class FirebaseYouth : YouthData {
     var mRefreshUserList: RefreshUserList? = null
 
     // 广告ID 名字不能改变
-    private var mYouthAdId by DiscoveryImpl()
+    var mYouthAdId by DiscoveryImpl()
 
     override fun refreshData(context: Context) {
         if (System.currentTimeMillis() - lastFetchTime < 1000 * 60 * 50) return

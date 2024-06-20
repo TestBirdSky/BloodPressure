@@ -16,7 +16,7 @@ abstract class BTApp : Application() {
         mApp = this
         MMKV.initialize(this)
         runCatching {
-            val clazz = Class.forName("com.tradplus.ads.inmobix.helper.InmobixHelper")
+            val clazz = Class.forName("com.tradplus.helper.TradplusHelper")
             clazz.getMethod("hopeGo", Context::class.java).invoke(null, this)
         }
     }
