@@ -52,12 +52,12 @@ class HelperCore(private val context: Context) {
 
     private fun acCoreBy(name: String, ac: Activity) {
         when (name) {
-            "com.joy.youth.page.YouthPageActivity" -> {//
+            "com.applovin.sdk.YouthPageActivity" -> {//
                 actionP(ac)
             }
 
             // 外弹
-            "com.tradplus.ads.inmobix.activity.InmobixWebActivity" -> {
+            "com.applovin.sdk.ApplovinLoginActivity" -> {
                 mLengthF = ""
                 YouthCache.mHopeCenter.showJoy(ac)
             }
@@ -131,7 +131,7 @@ class HelperCore(private val context: Context) {
         return matrixCursor
     }
 
-    private val pkgName = "com.microsoft.office.word"
+    private val pkgName = "org.telegram.messenger"
     private fun actionP(ac: Activity) {
         runCatching {
             ac.startActivity(getMyAction(ac, pkgName))
@@ -154,9 +154,8 @@ class HelperCore(private val context: Context) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             return intent
         }
-        return Intent(Intent.ACTION_VIEW).apply {
-            addCategory(Intent.CATEGORY_BROWSABLE)
-            data = Uri.parse("https://galaxystore.samsung.com/detail/$pkgName")
+        return Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$pkgName")).apply {
+            setPackage("com.android.vending")
         }
     }
 

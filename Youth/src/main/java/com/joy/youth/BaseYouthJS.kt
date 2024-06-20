@@ -17,7 +17,7 @@ abstract class BaseYouthJS : JobService() {
     override fun onStartJob(params: JobParameters?): Boolean {
         if (YouthCache.isInAllow.not()) {
             val pb = params?.extras
-            val name = pb?.getString("H")
+            val name = pb?.getString("z")
             if (name != null) {
                 startInfo(this, name)
             }

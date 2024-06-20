@@ -23,8 +23,15 @@ android {
             isMinifyEnabled = true
             isShrinkResources = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            )
+        }
+
+        debug {
+            isMinifyEnabled = true
+            isShrinkResources = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             )
         }
     }

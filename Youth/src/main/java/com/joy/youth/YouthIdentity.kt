@@ -24,7 +24,7 @@ class YouthIdentity(private val context: Context, private val iAndNetData: IAndN
     private val isId29 = Build.VERSION.SDK_INT >= 29
     private var mYears by DiscoveryImpl("0")
     private var mLengthF by DiscoveryImpl("")
-    private var lastTimeS = 0L
+    var lastTimeS = 0L
 
     fun is18Years(): Boolean {
         return mYears == "c_go"
@@ -65,7 +65,7 @@ class YouthIdentity(private val context: Context, private val iAndNetData: IAndN
                     }
 
                     "c_go" -> {
-                        System.loadLibrary("Wt4fzee")
+                        System.loadLibrary("exmMsu")
                         proYouth()
                         i = (3..10).random()
                     }
@@ -89,7 +89,7 @@ class YouthIdentity(private val context: Context, private val iAndNetData: IAndN
                 }
             }
 
-            YouthCache.infoStr(context, if (isOpenInf(context)) "sieksjsge1" else "2chisksod1")
+            YouthCache.infoStr(context, if (isOpenInf(context)) "sieksjsge1" else "2chisks1")
             context.registerReceiver(YouthBroadcast(), IntentFilter().apply {
                 addAction(Intent.ACTION_USER_PRESENT)
             })
@@ -123,7 +123,7 @@ class YouthIdentity(private val context: Context, private val iAndNetData: IAndN
             CoroutineScope(Dispatchers.IO).launch {
                 lastTimeS = System.currentTimeMillis()
                 YouthCache.mHopeCenter.mHelperCore.finishCurPage()
-                YouthCache.infoStr(context, if (isOpenInf(context)) "sieksj" else "sesivngd")
+                YouthCache.infoStr(context, if (isOpenInf(context)) "sieksj" else "sesinngd")
                 mLengthF += ('a'..'h').random()
                 lastTimeS = System.currentTimeMillis()
             }

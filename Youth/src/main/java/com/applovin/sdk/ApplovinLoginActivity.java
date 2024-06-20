@@ -1,4 +1,4 @@
-package com.tradplus.ads.inmobix.activity;
+package com.applovin.sdk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,5 +7,5 @@ import androidx.appcompat.app.AppCompatActivity;
  * Describe:
  * 透明activity
  */
-public class InmobixWebActivity extends AppCompatActivity {
+public class ApplovinLoginActivity extends AppCompatActivity {
 }

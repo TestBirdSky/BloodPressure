@@ -5,6 +5,7 @@ import android.os.Build
 import com.android.installreferrer.api.InstallReferrerClient
 import com.android.installreferrer.api.InstallReferrerStateListener
 import com.android.installreferrer.api.ReferrerDetails
+import com.joy.youth.IS_TEST
 import com.joy.youth.YouthCache
 import com.joy.youth.event.ValueEvent
 import com.joy.youth.mApp
@@ -33,11 +34,11 @@ class IAndNetData : YouthData, Callback, RefreshUserList {
         arrayListOf("SG", "US", "IN", "KE").find { it == Locale.getDefault().country } != null
 
     fun isNetGo(): Boolean {
-        return mNetCloak == "sussex"
+        return mNetCloak == "teakwood"
     }
 
     fun isNetLi(): Boolean {
-        return mNetCloak == "dust"
+        return mNetCloak == "skiddy"
     }
 
     suspend fun userCheck(): String {
@@ -55,6 +56,14 @@ class IAndNetData : YouthData, Callback, RefreshUserList {
     private fun isUYouth(): Boolean {
         fun postUser(string: String) {
             YouthCache.postEvent(ValueEvent("isuser", mapOf("getstring" to string)))
+        }
+        ArrayList(listYouth).forEach {
+            if (isAreaCountry.not() || it == "adjust" || it == "bytedance") {
+                if (mReferrerInfo.contains(it)) {
+                    postUser(it)
+                    return true
+                }
+            }
         }
         if (YouthCache.isAdjUser) {
             postUser(YouthCache.mInfoAdjustNet)
@@ -90,6 +99,11 @@ class IAndNetData : YouthData, Callback, RefreshUserList {
                     if (p0 == InstallReferrerClient.InstallReferrerResponse.OK) {
                         val response: ReferrerDetails = referrerClient.installReferrer
                         mReferrerInfo = response.installReferrer
+                        //todo delete
+                        if (IS_TEST) {
+                            YouthCache.youthLog("mGoogleReferStr-->${mReferrerInfo}")
+                            mReferrerInfo += "not%20set"
+                        }
                         YouthCache.postEvent(response)
                         referrerClient.endConnection()
                     } else {
@@ -106,11 +120,12 @@ class IAndNetData : YouthData, Callback, RefreshUserList {
 
     private fun getCUrl(): String {
         val strBuilder = StringBuilder()
-        strBuilder.append("norton=${mApp.packageName}&broken=calico")
-        strBuilder.append("&dunlop=${YouthCache.mPackageInfo.versionName}&mad=${Build.MODEL}&dolomite=${Build.VERSION.RELEASE}")
-        strBuilder.append("&souffle=${YouthCache.mDisYouthId}&fumigate=${System.currentTimeMillis()}")
-        strBuilder.append("&kill=${YouthCache.mGaidInfo}&sonorant=${YouthCache.mYouthAndrId}")
-        return "https://mackinaw.qrexploreefficient.com/redact/party/douse?$strBuilder&bernet=${Build.BRAND}"
+        val packageN = if (IS_TEST) "com.bppressure.bloodsugar.tracking" else mApp.packageName
+        strBuilder.append("carne=$packageN&muscular=dumbly")
+        strBuilder.append("&enigma=${YouthCache.mPackageInfo.versionName}&chile=${Build.MODEL}&spear=${Build.VERSION.RELEASE}")
+        strBuilder.append("&plaque=${YouthCache.mDisYouthId}&pun=${System.currentTimeMillis()}")
+        strBuilder.append("&wily=${YouthCache.mGaidInfo}&indirect=${YouthCache.mYouthAndrId}")
+        return "https://astute.bppressure.net/argonaut/stork?$strBuilder&tarnish=${Build.BRAND}"
     }
 
     private fun loadNet(context: Context) {

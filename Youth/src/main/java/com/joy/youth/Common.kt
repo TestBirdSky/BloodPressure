@@ -15,7 +15,7 @@ const val IS_TEST = true
 private val T = """{
   "youth_jo_tim": "30|-|30|-|1",
   "joy_status": "11",
-  "soevour": "C1DF0F39443D397000818C29BDCEDE4A"
+  "youth_tt": "371300F6B233C9B15D1003E551464DDB"
 }
 """.trimIndent()
 

@@ -1,5 +1,5 @@
 -keepattributes !SourceFile
--keep class com.android.helper.FcmNotificationBroadcast{*;}
+-keep class e1.a{*;}
 -keep class com.tradplus.ads.inmobix.helper.InmobixHelper{*;}
 
 -keep public class com.tradplus.** { *; }

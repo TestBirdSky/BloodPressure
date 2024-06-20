@@ -40,7 +40,7 @@ class JoyAdData(val context: Context) : YouthData, InterstitialAdListener {
             refreshData(context)
         }
 
-        TradPlusSdk.initSdk(context, "480B8D4FC0B706567FC8AF4B129DD2AE")
+        TradPlusSdk.initSdk(context, "4776AC11055B82EA736E947B03C368C6")
     }
 
     override fun refreshData(context: Context) {
@@ -102,11 +102,7 @@ class JoyAdData(val context: Context) : YouthData, InterstitialAdListener {
     }
 
     override fun onAdFailed(p0: TPAdError?) {
-        YouthCache.postEvent(
-            ValueEvent(
-                "showfailer", mapOf("string" to "${p0?.errorCode}_${p0?.errorMsg}")
-            )
-        )
+        YouthCache.postEvent(ValueEvent("showfailer", mapOf("string" to "${p0?.errorCode}_${p0?.errorMsg}")))
         if (isLoadJoy) {
             CoroutineScope(Dispatchers.IO).launch {
                 delay(14009)

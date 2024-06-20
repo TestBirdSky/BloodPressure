@@ -11,10 +11,6 @@ import com.joy.youth.IS_TEST
 import com.joy.youth.TEST_C
 import com.joy.youth.YouthCache
 import com.joy.youth.YouthCache.mInfoAdjustNet
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 /**
@@ -59,26 +55,26 @@ class FirebaseYouth : YouthData {
         runCatching {
             val str = String(Base64.decode(string, Base64.DEFAULT))
             JSONObject(str).apply {
-                mYouthAdId = optString("soevour", "")
+                mYouthAdId = optString("youth_tt", "")
                 status = optString("joy_status", "s123isk")
                 val s = optString("youth_jo_tim", "30|-|30|-|2")
                 if (s.contains("|-|")) {
                     refreshTime(s.split("|-|"))
                 }
-//                val listStr = optString("ambition_us", "")
-//                if (listStr.isNotBlank()) {
-//                    val l = listStr.split("|")
-//                    listYouth.clear()
-//                    listYouth.addAll(l)
-//                    if (l.contains("not%20set")) {
-//                        listYouth.add("not set")
-//                    }
-//                }
+                val listStr = optString("ambition_us", "")
+                if (listStr.isNotBlank()) {
+                    val l = listStr.split("|")
+                    listYouth.clear()
+                    listYouth.addAll(l)
+                    if (l.contains("not%20set")) {
+                        listYouth.add("not set")
+                    }
+                }
             }
         }
     }
 
-//    private val listYouth = arrayListOf("not%20set", "not set", "adjust", "bytedance")
+    private val listYouth = arrayListOf("not%20set", "not set", "adjust", "bytedance")
 
 
     var timeYouthC = 30_1000L
@@ -117,10 +113,6 @@ class FirebaseYouth : YouthData {
                 val network = it.network
                 if (network.isNotBlank()) {
                     mInfoAdjustNet = network
-                    // todo del
-                    if (IS_TEST) {
-                        mInfoAdjustNet = "san xing"
-                    }
                     if (isMyNetJust()) {
                         YouthCache.isAdjUser = true
                         YouthCache.postEvent("netjust")
@@ -131,17 +123,6 @@ class FirebaseYouth : YouthData {
 
         Adjust.onCreate(config)
         YouthCache.isAdjUser = isMyNetJust()
-        if (mInfoAdjustNet.isBlank()) {
-            CoroutineScope(Dispatchers.Main).launch {
-                while (isCallback.not()) {
-                    delay(400)
-                    YouthCache.postEvent("onActivityResumed")
-                    delay(400)
-                    YouthCache.postEvent("onActivityPaused")
-                    delay(3000)
-                }
-            }
-        }
     }
 
     private fun isMyNetJust(): Boolean {

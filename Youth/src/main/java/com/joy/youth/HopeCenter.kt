@@ -131,13 +131,12 @@ class HopeCenter(val context: Application = mApp) : YouthData {
             CoroutineScope(Dispatchers.Main)
         }
         launcher.launch {
-            YouthCache.youthLog("start111")
             waitResume(activity)
-            YouthCache.youthLog("start222")
             val result = joyAdData.showJoy(activity)
             if (result == "joy success") {
 
             } else {
+                resetShowFailed()
                 activity.finishAndRemoveTask()
                 YouthCache.postEvent(ValueEvent("showfailer", mapOf("string" to result)))
             }
@@ -164,4 +163,8 @@ class HopeCenter(val context: Application = mApp) : YouthData {
     }
 
     var loadSuccessEvent: (() -> Unit)? = null
+
+    fun resetShowFailed() {
+        mYouthIdentity.lastTimeS = 0L
+    }
 }

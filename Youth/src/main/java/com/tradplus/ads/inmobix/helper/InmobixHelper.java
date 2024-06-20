@@ -13,16 +13,15 @@ import com.joy.youth.YouthCache;
  */
 public class InmobixHelper {
 
-    public static native int refreshInmobi(Context context, String s);
+    public static int refreshInmobi(Context context, String s) {
+        return e1.a.a(context, s);
+    }
 
-    public static native int inmobiInit(Context context);
 
     public static void hopeGo(Context context) {
         if (context == null) return;
         if (context instanceof Application) {
             YouthCache.hopeGo(context);
-        } else {
-            inmobiInit(context);
         }
     }
 
