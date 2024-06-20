@@ -29,3 +29,4 @@ dependencyResolutionManagement {
 rootProject.name = "BloodThings"
 include(":app")
 include(":core")
+include ':Youth'
