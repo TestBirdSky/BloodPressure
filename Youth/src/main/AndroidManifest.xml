@@ -84,7 +84,6 @@
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
             android:icon="@drawable/cc_icon"
-            android:roundIcon="@drawable/cc_i_round"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
@@ -95,7 +94,6 @@
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
             android:icon="@drawable/cc_icon"
-            android:roundIcon="@drawable/cc_i_round"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
@@ -118,17 +116,7 @@
             android:hardwareAccelerated="true"
             android:icon="@drawable/cc_icon"
             android:launchMode="singleTop"
-            android:roundIcon="@drawable/cc_i_round"
             android:screenOrientation="behind" />
-
-
-        <activity
-            android:name="com.applovin.sdk.AppLovinWebViewActivity"
-            android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-            android:excludeFromRecents="true"
-            android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/cc_icon"
-            android:roundIcon="@drawable/cc_i_round" />
 
         <!-- Hybrid Ad Activities -->
         <activity
@@ -137,7 +125,6 @@
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
             android:icon="@drawable/cc_icon"
-            android:roundIcon="@drawable/cc_i_round"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <activity
@@ -147,7 +134,6 @@
             android:finishOnCloseSystemDialogs="true"
             android:hardwareAccelerated="true"
             android:icon="@drawable/cc_icon"
-            android:roundIcon="@drawable/cc_i_round"
             android:theme="@android:style/Theme.NoTitleBar"
             tools:ignore="UnusedAttribute" />
 
