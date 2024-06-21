@@ -4,7 +4,9 @@ import android.content.Context
 import android.util.Base64
 import com.adjust.sdk.Adjust
 import com.adjust.sdk.AdjustConfig
+import com.google.firebase.FirebaseApp
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.initialize
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.joy.youth.BuildConfig
 import com.joy.youth.IS_TEST
@@ -41,6 +43,7 @@ class FirebaseYouth : YouthData {
         if (isRefresh.not()) {
             isRefresh = true
             runCatching {
+                FirebaseApp.initializeApp(context)
                 val str = Firebase.remoteConfig.getString("joy_youth")
                 refreshCache(str)
             }
